@@ -17,14 +17,17 @@ public class SelectTile : MonoBehaviour {
 						if (GameObject.FindGameObjectWithTag("Selected")){
 							GameObject old = GameObject.FindGameObjectWithTag("Selected");
 							old.transform.tag="Tile";
+							old.renderer.material.color = Color.white;
 							Debug.Log("UNSELECT");
 						}
 						hit.collider.transform.tag = "Selected";
+						hit.collider.renderer.material.color = Color.red;
 						Debug.Log("SELECT");
 
 					}
 					else if(hit.collider.transform.tag.Equals("Selected")){
 						hit.collider.transform.tag = "Tile";
+						hit.collider.renderer.material.color = Color.white;
 						Debug.Log("UNSELECT");
 					}
 				}
