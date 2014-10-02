@@ -27,11 +27,11 @@ public class SelectTile : MonoBehaviour {
 						}
 						hit.collider.transform.tag = "Selected";
 						hit.collider.renderer.material.color = Color.red;
-						Location loc =(Location) hit.collider.GetComponent(typeof(Location));
+						Stats stats =(Stats) hit.collider.GetComponent(typeof(Stats));
 						Debug.Log("SELECT");
-						int asd=loc.getI();
+						int asd=stats.getI();
 						Debug.Log(asd);
-						asd=loc.getJ();
+						asd=stats.getJ();
 						Debug.Log(asd);
 
 					}

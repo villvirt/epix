@@ -31,16 +31,21 @@ public class BoardCreator : MonoBehaviour {
 				else{
 				Instantiate(tile);
 				tile.transform.position = new Vector3 (i+0.05F*i,0,j+0.05F*j);
-					Location loc =(Location) tile.GetComponent(typeof(Location));
-					loc.setI(j);
-					loc.setJ(i);
-					int asd=loc.getI();
+					Stats stats =(Stats) tile.GetComponent(typeof(Stats));
+					stats.setI(j);
+					stats.setJ(i);
+					int asd=stats.getI();
 					Debug.Log(asd);
-					asd=loc.getJ();
+					asd=stats.getJ();
 					Debug.Log(asd);
 				}
 			}
 		}
+	}
+
+	public int getBoardSize(){
+		return this.boardSize;
+
 	}
 	
 	// Update is called once per frame

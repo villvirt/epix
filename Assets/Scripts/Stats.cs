@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Location : MonoBehaviour {
+public class Stats : MonoBehaviour {
 	public int i;
 	public int j;
 
