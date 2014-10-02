@@ -8,6 +8,11 @@ public class SelectTile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		//prevent raycast if clicking GUI buttons
+		if (GUIUtility.hotControl == 0) {
+		
+
 		if (Input.GetMouseButtonDown(0)) {
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -22,7 +27,12 @@ public class SelectTile : MonoBehaviour {
 						}
 						hit.collider.transform.tag = "Selected";
 						hit.collider.renderer.material.color = Color.red;
+						Location loc =(Location) hit.collider.GetComponent(typeof(Location));
 						Debug.Log("SELECT");
+						int asd=loc.getI();
+						Debug.Log(asd);
+						asd=loc.getJ();
+						Debug.Log(asd);
 
 					}
 					else if(hit.collider.transform.tag.Equals("Selected")){
@@ -33,5 +43,6 @@ public class SelectTile : MonoBehaviour {
 				}
 			}
 		}
+	}
 	}
 }

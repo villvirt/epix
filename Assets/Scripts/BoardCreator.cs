@@ -31,6 +31,13 @@ public class BoardCreator : MonoBehaviour {
 				else{
 				Instantiate(tile);
 				tile.transform.position = new Vector3 (i+0.05F*i,0,j+0.05F*j);
+					Location loc =(Location) tile.GetComponent(typeof(Location));
+					loc.setI(j);
+					loc.setJ(i);
+					int asd=loc.getI();
+					Debug.Log(asd);
+					asd=loc.getJ();
+					Debug.Log(asd);
 				}
 			}
 		}
